@@ -237,7 +237,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
         }
 		
 		if(((message.body).toUpperCase().indexOf("cake".toUpperCase())>-1) && !Boolean(remind)) {
-			api.sendMessage("The cake sdfasfsais a lie.", message.threadID);
+			api.sendMessage("The cake aaaasdfasfsais a lie.", message.threadID);
         }
 		
 		if(((message.body).toUpperCase().indexOf("ヽ༼ຈل͜ຈ༽ﾉ".toUpperCase())>-1) && !Boolean(remind)) {
