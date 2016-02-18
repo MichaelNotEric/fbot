@@ -185,14 +185,17 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			gameD = mm + "/" + dd + "/" + yyyy;
 			
 			nba.stats.scoreboard({gameDate: gameD}, function (err, response) {
+				console.log("1");
 				var wgames = ""
 				for (i = 0; i < response.westConfStandingsByDay.length; i++) { 
 				    wgames = wgames + response.westConfStandingsByDay[i].team + ": " + response.westConfStandingsByDay[i].w + "-" + response.westConfStandingsByDay[i].l + "\n"
 				}
+				console.log("2");
 				var egames = ""
 				for (i = 0; i < response.eastConfStandingsByDay.length; i++) { 
 				    egames = egames + response.eastConfStandingsByDay[i].team + ": " + response.eastConfStandingsByDay[i].w + "-" + response.eastConfStandingsByDay[i].l + "\n"
 				}
+				console.log("HELLO");
 				api.sendMessage("\nWestern Conference:\n" + wgames + "\n\nEastern Conference:\n" + egames , message.threadID);
 					
 			
