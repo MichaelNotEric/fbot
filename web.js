@@ -187,6 +187,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			nba.stats.scoreboard({gameDate: gameD}, function (err, response) {
 				console.log("1");
 				var wgames = ""
+				console.log(response);
 				for (i = 0; i < response.westConfStandingsByDay.length; i++) { 
 				    wgames = wgames + response.westConfStandingsByDay[i].team + ": " + response.westConfStandingsByDay[i].w + "-" + response.westConfStandingsByDay[i].l + "\n"
 				}
