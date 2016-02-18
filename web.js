@@ -187,6 +187,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			nba.stats.scoreboard({gameDate: gameD}, function (err, response) {
 				var wgames = ""
 				if(response){
+					console.log("ok");
 					for (i = 0; i < response.westConfStandingsByDay.length; i++) { 
 						wgames = wgames + response.westConfStandingsByDay[i].team + ": " + response.westConfStandingsByDay[i].w + "-" + response.westConfStandingsByDay[i].l + "\n"
 					}
@@ -196,7 +197,8 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 					}
 					api.sendMessage("\nWestern Conference:\n" + wgames + "\n\nEastern Conference:\n" + egames , message.threadID);
 				} else {
-					api.sendMessage("Whoops, something went wrong.");
+					console.log("broke");
+					api.sendMessage("Whoops, something went wrong");
 				}
 			
 			
