@@ -377,7 +377,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			
         }
 		
-		if(message.body) {
+		if(message.body && message.senderName != "Michael Wehrmeister") {
 		    console.log("message from: " + message.senderName);
             api.markAsRead(message.threadID);
 			messageCount++;
