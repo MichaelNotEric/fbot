@@ -247,8 +247,6 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
   for (i = 0; i < estand.length; i++) { 
     egames = egames + estand[i].team + ": " + estand[i].wins + "-" + estand[i].loses + "\n"
   }
-    console.log(wgames);
-    console.log(egames);
     
     api.sendMessage("\nWestern Conference:\n" + wgames + "\n\nEastern Conference:\n" + egames , message.threadID);
     
@@ -377,7 +375,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			
         }
 		
-		if(message.body && message.senderName != "Michael Wehrmeister") {
+		if(message.body && message.senderName != "Eric Awehreo") {
 		    console.log("message from: " + message.senderName);
             api.markAsRead(message.threadID);
 			messageCount++;
