@@ -57,7 +57,6 @@ var ball=[
 ]
 
 var bern=[
-"I feel the bern.",
 "つ ◕_◕ ༽つ BERNIE TAKE MY ENERGY ༼ つ ◕_◕ ༽つ",
 "Do you feel the bern now Mr. Krabs?"
 ]
