@@ -1,6 +1,6 @@
 var login = require("facebook-chat-api");
 var nba = require("nba");
-var basketball-reference = require("basketball-reference");
+var bballref = require("basketball-reference");
 var ruser = "";
 var remind = false;
 var rreminder = "";
@@ -203,7 +203,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 				//api.sendMessage(response.available ,message.threadID);    
 			});*/
 			
-			basketball-reference.getLeagueStandings(yyyy, function(data) {
+			bballref.getLeagueStandings(yyyy, function(data) {
   wstand = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
   estand = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
   //console.log(data.standings);
