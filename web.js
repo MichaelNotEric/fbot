@@ -1,5 +1,6 @@
 var login = require("facebook-chat-api");
 var nba = require("nba");
+var bbref = require('basketball-reference');
 var ruser = "";
 var remind = false;
 var rreminder = "";
@@ -184,7 +185,7 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			var yyyy = (d.getFullYear()).toString();
 			gameD = mm + "/" + dd + "/" + yyyy;
 			
-			nba.stats.scoreboard({gameDate: gameD}, function (err, response) {
+			/*nba.stats.scoreboard({gameDate: gameD}, function (err, response) {
 				var wgames = ""
 				if(response){
 					for (i = 0; i < response.westConfStandingsByDay.length; i++) { 
@@ -201,7 +202,58 @@ login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback
 			
 			
 				//api.sendMessage(response.available ,message.threadID);    
-			});
+			});*/
+			
+			scraper.getLeagueStandings(yyyy, function(data) {
+  wstand = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  estand = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  //console.log(data.standings);
+  var i = 0;
+  var wi = 0;
+  var ei = 0;
+  //console.log(data);
+  while(wi<15 || ei < 15){
+    if(data.standings[i].conference=='Eastern Conference'){
+        if(ei < 15){
+            estand[ei]=data.standings[i];
+            ei++;
+        }
+    } else{
+        if(wi < 15){
+            wstand[wi]=data.standings[i];
+            wi++;
+        }
+    }
+    i++;
+  }
+  
+
+    
+  function compare(a,b) {
+  if (a.seed < b.seed)
+    return -1;
+  else if (a.seed > b.seed)
+    return 1;
+  else 
+    return 0;
+}
+    estand.sort(compare);
+    wstand.sort(compare);
+
+    var wgames = "";
+    var egames = ""
+  for (i = 0; i < wstand.length; i++) { 
+    wgames = wgames + wstand[i].team + ": " + wstand[i].wins + "-" + wstand[i].loses + "\n"
+  }
+  for (i = 0; i < estand.length; i++) { 
+    egames = egames + estand[i].team + ": " + estand[i].wins + "-" + estand[i].loses + "\n"
+  }
+    console.log(wgames);
+    console.log(egames);
+    
+    api.sendMessage("\nWestern Conference:\n" + wgames + "\n\nEastern Conference:\n" + egames , message.threadID);
+    
+});
 			
 			
             
