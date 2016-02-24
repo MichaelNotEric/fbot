@@ -1,6 +1,6 @@
 var login = require("facebook-chat-api");
 var nba = require("nba");
-var basketball-reference = require('basketball-reference');
+var basketball-reference = require("basketball-reference");
 var ruser = "";
 var remind = false;
 var rreminder = "";

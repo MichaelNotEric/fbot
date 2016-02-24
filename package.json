@@ -10,8 +10,8 @@
     "ejs": "2.3.3",
     "express": "4.13.3",
     "facebook-chat-api": "1.0.2",
-	"nba": "1.0.1"
-	"basketball-reference": "1.01"
+	"nba": "1.0.1",
+	"basketball-reference": "1.0.1"
   },
   "engines": {
     "node": "0.12.7"
