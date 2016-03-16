@@ -58,7 +58,7 @@ var ball=[
 
 var bern=[
 "つ ◕_◕ ༽つ BERNIE TAKE MY ENERGY ༼ つ ◕_◕ ༽つ",
-"Do you feel the bern now Mr. Krabs?"
+"Do you feel the bern now, Mr. Krabs?"
 ]
 
 // Create simple echo bot 
