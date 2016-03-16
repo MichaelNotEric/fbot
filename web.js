@@ -62,7 +62,7 @@ var bern=[
 ]
 
 // Create simple echo bot 
-login({email: "michaelfbot@gmail.com", password: "MonkFB214"}, function callback (err, api) {
+login({email: "michaelfbot@gmail.com", password: "MonkeyFB214"}, function callback (err, api) {
     if(err) return console.error(err);
  
     api.listen(function callback(err, message) {
